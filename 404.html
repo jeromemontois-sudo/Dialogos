@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page non trouvee | DIALOGOS</title>
+  <meta name="description" content="Page non trouvee — DIALOGOS, formation au dialogue interreligieux.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .error-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 140px 32px 80px; overflow: hidden;
+      background: linear-gradient(165deg, rgba(20,18,46,0.88) 0%, rgba(26,24,56,0.86) 50%, rgba(20,18,46,0.90) 100%), url('images/hero-bg.webp') center top / cover no-repeat; }
+    .error-inner { position: relative; max-width: 480px; z-index: 2; }
+    .error-code { font-family: 'Cormorant Garamond', serif; font-size: 120px; font-weight: 700; color: rgba(255,255,255,0.1); line-height: 1; letter-spacing: -4px; }
+    .error-icon { margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
+    .error-icon svg { opacity: 0.5; color: var(--accent); }
+    .error-inner h1 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: rgba(255,255,255,0.97); margin-bottom: 16px; text-shadow: 0 2px 20px rgba(0,0,0,0.2); }
+    .error-inner p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 32px; }
+    .error-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .error-actions .btn-outline { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.2); }
+    .error-actions .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  </style>
+
+  <!-- ── STICKY FOOTER FIX ── -->
+  <style>
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+    main.main { flex: 1 0 auto; }
+    .footer    { flex-shrink: 0; margin-top: 0; }
+    #confetti-canvas {
+      position: fixed !important;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg>
+        </div>
+        DIALOGOS
+      </a>
+    </div>
+  </nav>
+
+  <main class="main">
+    <section class="error-page">
+      <div class="error-inner">
+        <div class="error-code">404</div>
+        <div class="error-icon"><svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg></div>
+        <h1>Page non trouvee</h1>
+        <p>La page que vous recherchez n'existe pas ou a ete deplacee. Verifiez l'adresse ou retournez a l'accueil pour acceder au module de formation.</p>
+        <div class="error-actions">
+          <a href="index.html" class="btn btn-primary">Retour a l'accueil</a>
+          <a href="javascript:void(0)" onclick="openAuthModal('module1.html')" class="btn btn-outline">Acceder au module</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" style="margin-top:0;">
+    <div class="orb-f"></div>
+    <div class="footer-inner">
+      <div>
+        <h4>DIALOGOS</h4>
+        <p>Formation au dialogue interreligieux.<br><a href="https://sdilille.github.io/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">Service pour le Dialogue Interreligieux</a>.<br>Diocese de Lille.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px;line-height:1.6;">Maison Paul VI — Dialogue interreligieux<br>74 Rue Hippolyte Lefebvre<br>59800 Lille<br>03 20 06 43 02<br><a href="mailto:jerome.montois@lille.catholique.fr" style="color:var(--accent);display:inline;padding:0;">jerome.montois@lille.catholique.fr</a></p>
+      </div>
+    </div>
+    <div style="text-align:center;padding:0 32px 16px;"><a href="https://sdilille.github.io/mentions.html" target="_blank" rel="noopener" style="font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:1px;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Mentions legales</a></div>
+    <div class="footer-bottom" style="padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">&copy; 2026 Diocese de Lille — Service pour le Dialogue Interreligieux. Tous droits reserves.</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

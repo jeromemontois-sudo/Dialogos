@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 2 — Les 4 Formes de Dialogue en Pratique | DIALOGOS</title>
+  <meta name="description" content="Module 2 du parcours DIALOGOS : les 4 formes de dialogue en pratique. Dialogue de vie, d'action, d'echange, d'experience. Documents du Magistere.">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ── STICKY FOOTER FIX ── -->
+  <style>
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+    main.main { flex: 1 0 auto; }
+    .footer    { flex-shrink: 0; margin-top: 0; }
+    #confetti-canvas {
+      position: fixed !important;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body data-module="2">
+  <div class="loader">
+    <div class="loader-ring-wrap">
+      <svg class="ring-outer" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10" stroke="rgba(201,149,93,0.3)" stroke-dasharray="60 40"/></svg>
+      <svg class="ring-inner" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z" stroke="rgba(201,149,93,0.5)"/></svg>
+      <svg class="ring-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg>
+    </div>
+    <div class="loader-label"><div class="title">Chargement</div><div class="subtitle">DIALOGOS</div></div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg>
+        </div>
+        DIALOGOS
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" onclick="event.preventDefault();this.parentElement.classList.toggle('open')">Modules <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="javascript:void(0)" onclick="openAuthModal('module1.html')">Module 1 &mdash; Fondements</a></li>
+            <li><a href="javascript:void(0)" onclick="openAuthModal('module2.html')">Module 2 &mdash; 4 Formes</a></li>
+            <li><a href="javascript:void(0)" onclick="openAuthModal('module3.html')">Module 3 &mdash; Marie</a></li>
+            <li><a href="javascript:void(0)" onclick="openAuthModal('module4.html')">Module 4 &mdash; Jeune</a></li>
+            <li><a href="javascript:void(0)" onclick="openAuthModal('module5.html')">Module 5 &mdash; Paix</a></li>
+          </ul>
+        </li>
+        <li><a href="glossaire.html">Glossaire</a></li>
+        <li><a href="bibliographie.html">Bibliographie</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main">
+    <!-- Hero -->
+    <section class="hero hero-page">
+      <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+      <div class="hero-inner" style="max-width:900px;">
+        <div class="hero-eyebrow">Module 2 sur 5</div>
+        <h1 style="font-size:clamp(36px,5.5vw,64px);margin-bottom:16px;">Les 4 Formes de Dialogue en Pratique</h1>
+        <p class="hero-desc" style="max-width:640px;">Du dialogue de vie au dialogue d'experience : comprendre, reconnaitre et mettre en oeuvre les quatre formes complementaires du dialogue interreligieux.</p>
+      </div>
+    </section>
+
+    <!-- Barre de progression des etapes -->
+    <div id="step-progress" style="position:sticky;top:56px;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);padding:16px 32px;">
+      <div style="max-width:760px;margin:0 auto;display:flex;align-items:center;gap:8px;justify-content:space-between;">
+        <div class="step-dot" data-step="1" style="flex:1;text-align:center;">
+          <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin:0 auto 6px;">1</div>
+          <div style="font-size:10px;font-weight:600;color:var(--text-secondary);letter-spacing:0.5px;">APPRENDRE</div>
+        </div>
+        <div style="flex:1;height:2px;background:var(--border);border-radius:1px;margin-top:-16px;"></div>
+        <div class="step-dot" data-step="2" style="flex:1;text-align:center;">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin:0 auto 6px;">2</div>
+          <div style="font-size:10px;font-weight:600;color:var(--text-muted);letter-spacing:0.5px;">COMPRENDRE</div>
+        </div>
+        <div style="flex:1;height:2px;background:var(--border);border-radius:1px;margin-top:-16px;"></div>
+        <div class="step-dot" data-step="3" style="flex:1;text-align:center;">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin:0 auto 6px;">3</div>
+          <div style="font-size:10px;font-weight:600;color:var(--text-muted);letter-spacing:0.5px;">RENCONTRER</div>
+        </div>
+        <div style="flex:1;height:2px;background:var(--border);border-radius:1px;margin-top:-16px;"></div>
+        <div class="step-dot" data-step="4" style="flex:1;text-align:center;">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin:0 auto 6px;">4</div>
+          <div style="font-size:10px;font-weight:600;color:var(--text-muted);letter-spacing:0.5px;">TEMOIGNER</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meta-donnees pedagogiques -->
+    <section class="section" style="padding-top:40px;">
+      <div class="section-header fade-in">
+        <div class="section-eyebrow">Donnees pedagogiques</div>
+        <h2>Metadonnees du module</h2>
+      </div>
+
+      <div class="card-grid" style="margin-bottom:40px;">
+        <div class="card fade-in stagger-1">
+          <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></svg></div>
+          <h3>Niveau</h3>
+          <p>Formation intermediaire, orientee pratique. A destination des acteurs du dialogue ayant suivi le Module 1.</p>
+        </div>
+        <div class="card fade-in stagger-2">
+          <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0012 4c-4.97 0-9 4.03-9 9s4.02 9 9 9a8.994 8.994 0 007.03-14.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg></div>
+          <h3>Temps d'etude</h3>
+          <p>Environ 45 minutes.</p>
+        </div>
+        <div class="card fade-in stagger-3">
+          <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></div>
+          <h3>Documents magisteriels</h3>
+          <p><em>Dialogue et Annonce</em> (1991), <em>Redemptoris Missio</em> &sect;55-57 (1990), <em>Fratelli Tutti</em> &sect;198 (2020).</p>
+        </div>
+      </div>
+
+      <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:36px 32px;border:1px solid var(--border);margin-bottom:48px;">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--primary);margin-bottom:20px;">Competences visees</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
+          <div style="padding:20px;background:linear-gradient(135deg,rgba(46,42,92,0.03),rgba(46,42,92,0.01));border-radius:var(--radius-sm);border-left:3px solid var(--accent);">
+            <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Savoir</h4>
+            <p style="font-size:14px;color:var(--text-secondary);margin:0;line-height:1.6;">Definir chacune des quatre formes de dialogue et en identifier les caracteristiques distinctives.</p>
+          </div>
+          <div style="padding:20px;background:linear-gradient(135deg,rgba(46,42,92,0.03),rgba(46,42,92,0.01));border-radius:var(--radius-sm);border-left:3px solid var(--primary-lighter);">
+            <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--primary-lighter);margin-bottom:8px;">Savoir-faire</h4>
+            <p style="font-size:14px;color:var(--text-secondary);margin:0;line-height:1.6;">Reconnaitre des opportunites de dialogue dans des situations concretes et adapter sa posture.</p>
+          </div>
+          <div style="padding:20px;background:linear-gradient(135deg,rgba(46,42,92,0.03),rgba(46,42,92,0.01));border-radius:var(--radius-sm);border-left:3px solid var(--primary);">
+            <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--primary);margin-bottom:8px;">Savoir-etre</h4>
+            <p style="font-size:14px;color:var(--text-secondary);margin:0;line-height:1.6;">Adopter la posture de respect, de disponibilite et de sincerite requise par chaque forme de dialogue.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="objectifs-box fade-in">
+        <h4>Objectifs d'apprentissage</h4>
+        <ul>
+          <li>Definir chacune des quatre formes de dialogue (vie, action, echange, experience) avec precision.</li>
+          <li>Distinguer les attitudes requises et les pieges specifiques a chaque forme de dialogue.</li>
+          <li>Identifier dans son contexte personnel des opportunites concretes de dialogue.</li>
+          <li>Comprendre la complementarite dynamique entre les quatre formes.</li>
+          <li>Savoir ce qui peut etre partage et ce qui ne peut pas l'entre dans chaque forme.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section" style="background:var(--bg-warm);">
+      <div class="content-block">
+        <h2 class="fade-in">Introduction</h2>
+        <p class="fade-in" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--primary);line-height:1.6;margin-bottom:28px;"><em>Comment passer des principes a la pratique dans le dialogue interreligieux ?</em></p>
+
+        <p class="fade-in">Les fondements doctrinaux etudies dans le Module 1 nous ont montre que le dialogue interreligieux est une <strong>dimension intrinseque de la mission de l'Église</strong>. Mais comment cela se concretise-t-il dans la vie quotidienne d'un chretien ? Le document <em>Dialogue et Annonce</em> (1991) a distingue <strong>quatre formes complementaires</strong> de dialogue, chacune avec ses exigences propres, ses opportunites et ses limites.</p>
+
+        <p class="fade-in">Ce module vous invite a explorer chacune de ces quatre formes, a les reconnaitre dans votre propre experience, et a developper les competences necessaires pour les mettre en oeuvre avec discernement et authenticite. Car le dialogue authentique ne s'improvise pas : il se cultive, se prepare, et se vit dans la fidelite a la fois a sa foi et au respect de l'autre.</p>
+      </div>
+    </section>
+
+    <!-- Section 1 : APPRENDRE — Dialogue de Vie et d'Action -->
+    <section class="section" id="apprendre" data-step="1">
+      <div class="content-block">
+        <div class="section-header fade-in" style="margin-bottom:36px;">
+          <div class="section-eyebrow">Section 1</div>
+          <h2>Apprendre : Le dialogue de vie et le dialogue d'action</h2>
+          <p>Les fondements relationnels et sociaux du dialogue interreligieux.</p>
+        </div>
+
+        <!-- Podcasts -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M12 3a9 9 0 00-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 00-9-9z"/></svg>Podcasts (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">Les podcasts de cette etape seront bientot disponibles.</p>
+        </div>
+        <!-- Infographie -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>Infographie (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">L'infographie de cette etape sera bientot disponible.</p>
+        </div>
+
+        
+
+        <h3 class="fade-in">1.1 Le dialogue de vie : partager le quotidien</h3>
+
+        <p class="fade-in">Le dialogue de vie est la <strong>forme fondamentale</strong> de tout dialogue interreligieux. Il ne demande ni expertise theologique ni discours prepare. Il suffit de vivre ensemble &mdash; dans le meme quartier, la meme ecole, le meme lieu de travail &mdash; avec une <strong>disponibilite a l'autre</strong>. C'est dans ces rencontres ordinaires que se tissent les liens de confiance indispensables a toute demarche ulterieure.</p>
+
+        <div class="cite-box fade-in">
+          <p>&laquo; Les croyants de differentes religions, par le temoignage de leur vie quotidienne, portent devant les autres leurs valeurs humaines et spirituelles, et s'aident mutuellement a les vivre pour edifier une societe plus juste et plus fraternelle. &raquo;</p>
+          <span class="source">&mdash; CDF-CPDI, <em>Dialogue et Annonce</em>, 19 mai 1991, &sect; 28. AAS 84 (1992), p. 421.</span>
+        </div>
+
+        <p class="fade-in">Ce dialogue se manifeste dans les <strong>gestes simples</strong> : un bonjour, une invitation a partager un repas, l'ecoute d'une preoccupation, la solidarite face a une epreuve. Il humanise l'autre avant meme de nommer ses croyances. Comme le rappelle le temoignage d'Aicha B., benevole associative a Marseille :</p>
+
+        <div class="cite-box fade-in">
+          <p>&laquo; Dans notre quartier populaire de Marseille, l'imam de la mosquee et le cure de la paroisse se retrouvent chaque semaine autour d'un cafe. Ce n'est pas pour 'discuter theologie' &mdash; d'ailleurs, ils en rient eux-memes. C'est pour parler des familles en difficulte, des jeunes sans emploi, des mamans isolees. Un jour, l'imam m'a dit : 'Mon ami le cure et moi, on ne se comprend pas toujours sur Dieu. Mais on se comprend toujours sur l'homme.' &raquo;</p>
+          <span class="source">&mdash; Aicha B., benevole associative, Marseille.</span>
+        </div>
+
+        <p class="fade-in">Les <strong>attitudes requises</strong> pour le dialogue de vie sont : une presence reguliere et stable, une ecoute sans agenda (non orientee vers la conversion), le partage des peines et des joies, et le respect des rythmes de l'autre. Le <strong>piege majeur</strong> a eviter est de transformer le dialogue de vie en <strong>strategie deguisee d'evangelisation</strong>. L'autre percoit immediatement une intention cachee. La sincerite est le seul moteur.</p>
+
+        <h3 class="fade-in">1.2 Le dialogue d'action : construire ensemble</h3>
+
+        <p class="fade-in">Le dialogue d'action naît d'un <strong>constat partage</strong> : l'injustice, la pauvrete, l'exclusion, la degradation ecologique touchent indistinctement tous les hommes. Face a ces defis, les convictions religieuses appellent a la meme reponse : la solidarite, le service, le don de soi. Le document <em>Dialogue et Annonce</em> &sect;29 affirme que &laquo; la collaboration pour le developpement integral de l'homme et la liberation des oppressions est une forme eminente de dialogue &raquo;.</p>
+
+        <div class="cite-box fade-in">
+          <p>&laquo; La collaboration pour le developpement integral de l'homme et la liberation des oppressions est une forme eminente de dialogue. &raquo;</p>
+          <span class="source">&mdash; <em>Dialogue et Annonce</em>, &sect; 29. AAS 84 (1992), p. 422.</span>
+        </div>
+
+        <p class="fade-in">Les <strong>domaines de collaboration</strong> sont nombreux : les banques alimentaires communes, les jardins partages, le soutien scolaire, les cleanwalks interreligieuses, l'accompagnement en fin de vie. Chacun de ces engagements temoigne que la foi se traduit en actes concrets au service du bien commun. Le temoignage du Pere Thomas L., cure en banlieue parisienne, illustre cette dynamique :</p>
+
+        <div class="cite-box fade-in">
+          <p>&laquo; Lors du premier confinement, notre paroisse et la mosquee voisine avons monte une cuisine solidaire. Des catholiques et des musulmans preparaient ensemble des repas pour les soignants et les sans-abri. Au debut, on se connaissait a peine. Au bout de trois semaines, on priait chacun a notre maniere avant de commencer &mdash; un moment de silence respectueux. Un jeune musulman m'a dit : 'Je ne savais pas que les chretiens priaient aussi avant de travailler.' &raquo;</p>
+          <span class="source">&mdash; Pere Thomas L., cure en banlieue parisienne.</span>
+        </div>
+
+        <p class="fade-in">La <strong>regle d'or</strong> du dialogue d'action est simple mais exigeante : <strong>ne jamais instrumentaliser l'autre</strong>. La collaboration doit etre authentiquement bidirectionnelle. Si le projet est &laquo; catholique avec la participation des musulmans &raquo; plutot que &laquo; catholique et musulman ensemble &raquo;, ce n'est plus du dialogue.</p>
+
+        <div class="key-box fade-in">
+          <h4>Points cles a retenir</h4>
+          <ul>
+            <li>Le dialogue de vie est le fondement relationnel de tout dialogue interreligieux (&sect; 28, AAS 84).</li>
+            <li>Il se manifeste dans les gestes simples du quotidien : presence, ecoute, partage, solidarite.</li>
+            <li>Le dialogue d'action repose sur la collaboration pour des causes partagees (&sect; 29, AAS 84).</li>
+            <li>La regle d'or : ne jamais instrumentaliser l'autre. La collaboration doit etre bidirectionnelle.</li>
+            <li>Toute intention cachee d'evangelisation corrompt le dialogue de vie.</li>
+          </ul>
+        </div>
+
+        <!-- Magisterium AI -->
+        <div class="fade-in" style="background:linear-gradient(135deg,rgba(46,42,92,0.03),rgba(46,42,92,0.01));border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);margin:24px 0 16px;">
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+            <div style="flex:1;min-width:200px;">
+              <h4 style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:4px;">Approfondir avec Magisterium AI</h4>
+              <p style="font-size:12px;color:var(--text-secondary);margin:0;line-height:1.5;">Posez vos questions sur les documents du Magistere. L'IA explore les archives et renvoie aux paragraphes exacts.</p>
+            </div>
+            <a href="https://www.magisterium.com/fr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:100px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--accent);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;transition:all 0.3s ease;flex-shrink:0;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(46,42,92,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">Consulter Magisterium AI &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Validation etape 1 -->
+        <div class="fade-in step-complete-btn" data-step="1" style="text-align:center;margin-top:32px;">
+          <button onclick="completeStep(1)" class="btn btn-primary" style="font-size:14px;padding:14px 32px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:6px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>J'ai termine cette etape &mdash; Verrouiller la suivante dans 24h</button>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">En cliquant, vous validez votre lecture de cette section et declenchez le decompte de 24h avant l'etape suivante.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 : COMPRENDRE — Dialogue d'Échange et d'Expérience -->
+    <section class="section" id="comprendre" data-step="2" style="background:var(--bg-warm);">
+      <div class="content-block">
+        <div class="section-header fade-in" style="margin-bottom:36px;">
+          <div class="section-eyebrow">Section 2</div>
+          <h2>Comprendre : Le dialogue d'echange et le dialogue d'experience</h2>
+          <p>Les dimensions intellectuelle et spirituelle du dialogue interreligieux.</p>
+        </div>
+
+        <!-- Podcasts -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M12 3a9 9 0 00-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 00-9-9z"/></svg>Podcasts (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">Les podcasts de cette etape seront bientot disponibles.</p>
+        </div>
+        <!-- Infographie -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>Infographie (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">L'infographie de cette etape sera bientot disponible.</p>
+        </div>
+
+        
+
+        <h3 class="fade-in">2.1 Le dialogue d'echange : comprendre pour respecter</h3>
+
+        <p class="fade-in">Le dialogue d'echange suppose une <strong>competence reciproque</strong> : connaitre suffisamment sa propre tradition pour la presenter avec clarte, et connaitre suffisamment l'autre pour ne pas le caricaturer. Le document <em>Dialogue et Annonce</em> &sect;30 le definit comme &laquo; l'approfondissement des patrimoines religieux respectifs par des specialistes et des theologiens &raquo;.</p>
+
+        <div class="cite-box fade-in">
+          <p>&laquo; L'approfondissement des patrimoines religieux respectifs par des specialistes et des theologiens. &raquo;</p>
+          <span class="source">&mdash; <em>Dialogue et Annonce</em>, &sect; 30. AAS 84 (1992), p. 423.</span>
+        </div>
+
+        <p class="fade-in">Trois niveaux peuvent etre distingues dans le dialogue d'echange :</p>
+
+        <p class="fade-in"><strong>Niveau informationnel.</strong> Presentation des faits historiques et doctrinaux, vocabulaire de base (shahada, salat, zakat, hajj), reperes chronologiques et geographiques. Ce niveau est accessible a tous et constitue le minimum pour aborder le dialogue sans prejuges.</p>
+
+        <p class="fade-in"><strong>Niveau explicatif.</strong> Comprendre les raisons internes de la foi de l'autre, distinguer les niveaux de croyance (croyant, pratiquant, culturel), identifier les courants et diversites internes. Ce niveau exige un effort d'empathie intellectuelle.</p>
+
+        <p class="fade-in"><strong>Niveau hermeneutique.</strong> Lecture comparee des textes fondateurs, theologie des &laquo; semences du Verbe &raquo;, discernement des convergences et divergences fondamentales. Ce niveau est reserve aux specialistes formes dans les deux traditions.</p>
+
+        <p class="fade-in">Le dialogue d'echange <strong>n'est pas</strong> : une negociation ou l'on cherche un &laquo; minimum commun &raquo;, un exercice d'apologetique visant a convaincre, ni une validation reciproque de toutes les croyances (relativisme). Il vise la <strong>comprehension mutuelle authentique</strong>, fondee sur la rigueur intellectuelle et l'humilite.</p>
+
+        <h3 class="fade-in">2.2 Le dialogue d'experience : partager la quete de Dieu</h3>
+
+        <p class="fade-in">Le dialogue d'experience touche au <strong>coeur de la vie religieuse</strong> : la relation personnelle avec Dieu, exprimee dans la priere, le jeune, la recherche de paix interieure, l'engagement pour la justice. Le document <em>Dialogue et Annonce</em> &sect;31 le definit comme &laquo; le partage des richesses spirituelles, notamment concernant la priere et la contemplation &raquo;.</p>
+
+        <div class="cite-box fade-in">
+          <p>&laquo; Le partage des richesses spirituelles, notamment concernant la priere et la contemplation. &raquo;</p>
+          <span class="source">&mdash; <em>Dialogue et Annonce</em>, &sect; 31. AAS 84 (1992), p. 423.</span>
+        </div>
+
+        <p class="fade-in">Ce qui peut etre partage dans le dialogue d'experience inclut : le temoignage de conversion ou d'engagement (recit personnel sans viser l'imitation), la lecture spirituelle (partage de textes inspirants en respectant les limites scripturaires), le <strong>silence commun</strong> (meditation, adoration, dhikr &mdash; sans melanger les pratiques), le pelerinage (visite de lieux saints respectifs sans participer aux rituels de l'autre), et l'engagement caritatif (service ensemble sans confusion des motivations).</p>
+
+        <p class="fade-in">Selon le Magistere, il est <strong>inadmissible</strong> de : participer a une priere liturgique de l'autre religion (priere commune liturgique non validee), melanger les rituels (faire une &laquo; priere chretienne &raquo; dans une mosquee, ou reciter le Coran dans une église), ou celebrer un &laquo; culte syncretique &raquo;. <em>Redemptoris Missio</em> &sect;56 rappelle : &laquo; Il ne faut pas confondre les identites ni les missions. Le dialogue ne vise pas l'uniformisation. &raquo;</p>
+
+        <div class="key-box fade-in">
+          <h4>Points cles a retenir</h4>
+          <ul>
+            <li>Le dialogue d'echange comporte trois niveaux : informationnel, explicatif, hermeneutique (&sect; 30, AAS 84).</li>
+            <li>Il n'est ni negociation, ni apologetique, ni relativisme. Il vise la comprehension mutuelle.</li>
+            <li>Le dialogue d'experience concerne le partage des richesses spirituelles (&sect; 31, AAS 84).</li>
+            <li>Le silence commun est possible ; la priere liturgique commune non validee est proscrite.</li>
+            <li>Les rituels ne doivent pas etre melanges (&laquo; Il ne faut pas confondre les identites &raquo;, RM &sect; 56).</li>
+          </ul>
+        </div>
+
+        <!-- Magisterium AI -->
+        <div class="fade-in" style="background:linear-gradient(135deg,rgba(46,42,92,0.03),rgba(46,42,92,0.01));border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);margin:24px 0 16px;">
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+            <div style="flex:1;min-width:200px;">
+              <h4 style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:4px;">Approfondir avec Magisterium AI</h4>
+              <p style="font-size:12px;color:var(--text-secondary);margin:0;line-height:1.5;">Posez vos questions sur les documents du Magistere. L'IA explore les archives et renvoie aux paragraphes exacts.</p>
+            </div>
+            <a href="https://www.magisterium.com/fr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:100px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--accent);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;transition:all 0.3s ease;flex-shrink:0;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(46,42,92,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">Consulter Magisterium AI &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Validation etape 2 -->
+        <div class="fade-in step-complete-btn" data-step="2" style="text-align:center;margin-top:32px;">
+          <button onclick="completeStep(2)" class="btn btn-primary" style="font-size:14px;padding:14px 32px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:6px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>J'ai termine cette etape &mdash; Verrouiller la suivante dans 24h</button>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">En cliquant, vous validez votre lecture de cette section et declenchez le decompte de 24h avant l'etape suivante.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 : RENCONTRER — Études de cas pratiques -->
+    <section class="section" id="rencontrer" data-step="3">
+      <div class="content-block">
+        <div class="section-header fade-in" style="margin-bottom:36px;">
+          <div class="section-eyebrow">Section 3</div>
+          <h2>Rencontrer : Etudes de cas et mises en situation</h2>
+          <p>Apprendre a reconnaitre les quatre formes de dialogue dans des situations concretes.</p>
+        </div>
+
+        <!-- Podcasts -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M12 3a9 9 0 00-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 00-9-9z"/></svg>Podcasts (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">Les podcasts de cette etape seront bientot disponibles.</p>
+        </div>
+        <!-- Infographie -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>Infographie (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">L'infographie de cette etape sera bientot disponible.</p>
+        </div>
+
+        
+
+        <h3 class="fade-in">3.1 Etude de cas n°1 : l'invitation a l'iftar</h3>
+
+        <p class="fade-in"><strong>Situation.</strong> Votre voisin musulman vous invite a l'iftar (repas de rupture du jeune) pendant le Ramadan. Vous etes catholique pratiquant et en periode de Careme. Comment repondez-vous ?</p>
+
+        <p class="fade-in"><strong>Analyse.</strong> Cette situation typique engage a la fois le <strong>dialogue de vie</strong> (invitation amicale, partage du quotidien) et le <strong>dialogue d'experience</strong> (les deux traditions pratiquent le jeune en meme periode). L'invitation a l'iftar est une offre de relation authentique. L'accepter, c'est entrer dans le dialogue de vie. Expliquer que vous etes aussi en periode de jeune (Careme), c'est ouvrir un dialogue d'experience.</p>
+
+        <p class="fade-in"><strong>Reponse recommandee.</strong> Accepter l'invitation avec gratitude. Participer au repas en respectant le rythme de l'iftar. Partager, si l'occasion s'en presente, ce que le Careme represente pour vous. Ne pas chercher a &laquo; en profiter &raquo; pour evangeliser. Remercier chaleureusement apres le repas. Cette simple demarche etablit un lien de confiance qui peut durer des annees.</p>
+
+        <h3 class="fade-in">3.2 Etude de cas n°2 : le groupe d'etude interreligieux</h3>
+
+        <p class="fade-in"><strong>Situation.</strong> Vous etes animateur d'un groupe d'etude de la paroisse. Un benevole musulman propose d'organiser une rencontre autour des textes sacres. Comment abordez-vous cette proposition ?</p>
+
+        <p class="fade-in"><strong>Analyse.</strong> Cette situation engage le <strong>dialogue d'echange</strong> au niveau hermeneutique. Il s'agit d'une rencontre autour des textes fondateurs, ce qui exige competence theologique et humilite intellectuelle. La proposition est valable si elle est encadree correctement.</p>
+
+        <p class="fade-in"><strong>Reponse recommandee.</strong> Accepter la proposition en l'encadrant : definir un theme precis (ex. : &laquo; Marie dans le Coran et les Evangiles &raquo;), prevoir un animateur forme aux deux traditions, etablir un cadre respectueux ou chacun presente sa tradition sans chercher a convaincre l'autre, prevoir un temps de questions ouvertes. Le document <em>Dialogue et Annonce</em> &sect;30 recommande ce type de rencontre lorsqu'elle est preparee par des &laquo; specialistes et des theologiens &raquo;.</p>
+
+        <h3 class="fade-in">3.3 Etude de cas n°3 : la cuisine solidaire</h3>
+
+        <p class="fade-in"><strong>Situation.</strong> Vous etes responsable d'une association caritative paroissiale. Un benevole musulman propose d'organiser une collecte alimentaire pendant le Ramadan. Comment integrez-vous cette proposition dans une demarche de dialogue d'action authentique ?</p>
+
+        <p class="fade-in"><strong>Analyse.</strong> Cette situation engage le <strong>dialogue d'action</strong>. La proposition de collaboration pour une cause solidaire est l'expression typique de cette forme de dialogue. Le point cle est de s'assurer que la collaboration est veritablement <strong>bidirectionnelle</strong>.</p>
+
+        <p class="fade-in"><strong>Reponse recommandee.</strong> Co-construire le projet avec le benevole musulman : repartir les responsabilites equitablement, associer les deux communautes (paroisse et mosquee) des l'annonce, organiser conjointement la logistique et la distribution, partager les resultats et les temoignages, envisager la repetition de l'initiative. La regle d'or s'applique : ne jamais instrumentaliser l'autre. Si le projet est percu comme &laquo; catholique avec participation musulmane &raquo; plutot que comme projet commun, le dialogue d'action est corrompu.</p>
+
+        <h3 class="fade-in">3.4 Complementarite dynamique des quatre formes</h3>
+
+        <p class="fade-in">Les quatre formes de dialogue ne sont pas des <strong>compartiments etanches</strong>. Elles s'enrichissent mutuellement : le dialogue de vie cree les conditions humaines du dialogue d'echange ; le dialogue d'action temoigne de la credibilite des paroles ; le dialogue d'experience approfondit la dimension spirituelle. Toutes ces formes convergent vers une meilleure comprehension mutuelle et un temoignage plus authentique de la foi chretienne.</p>
+
+        <p class="fade-in">On ne peut pas sauter une etape. Le dialogue d'echange sans dialogue de vie devient abstrait et sterile. Le dialogue d'experience sans les trois autres devient dangereusement syncretiste. La progression naturelle est : <strong>vie &rarr; action &rarr; echange &rarr; experience</strong>, avec un retour constant a la relation concrete.</p>
+
+        <div class="key-box fade-in">
+          <h4>Points cles a retenir</h4>
+          <ul>
+            <li>Le dialogue de vie est le fondement ; on ne peut sauter les etapes.</li>
+            <li>Chaque situation concrete appelle une forme de dialogue privilegiee.</li>
+            <li>Accepter une invitation a l'iftar = dialogue de vie + dialogue d'experience.</li>
+            <li>Un groupe d'etude interreligieux = dialogue d'echange (niveau hermeneutique).</li>
+            <li>Une action caritative commune = dialogue d'action (bidirectionnelle exigee).</li>
+            <li>Les quatre formes s'enrichissent mutuellement dans un mouvement circulaire.</li>
+          </ul>
+        </div>
+
+        <!-- Magisterium AI -->
+        <div class="fade-in" style="background:linear-gradient(135deg,rgba(46,42,92,0.03),rgba(46,42,92,0.01));border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);margin:24px 0 16px;">
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+            <div style="flex:1;min-width:200px;">
+              <h4 style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:4px;">Approfondir avec Magisterium AI</h4>
+              <p style="font-size:12px;color:var(--text-secondary);margin:0;line-height:1.5;">Posez vos questions sur les documents du Magistere. L'IA explore les archives et renvoie aux paragraphes exacts.</p>
+            </div>
+            <a href="https://www.magisterium.com/fr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:100px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--accent);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;transition:all 0.3s ease;flex-shrink:0;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(46,42,92,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">Consulter Magisterium AI &rarr;</a>
+          </div>
+        </div>
+
+
+        <!-- Validation etape 3 -->
+        <div class="fade-in step-complete-btn" data-step="3" style="text-align:center;margin-top:32px;">
+          <button onclick="completeStep(3)" class="btn btn-primary" style="font-size:14px;padding:14px 32px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:6px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>J'ai termine cette etape &mdash; Verrouiller la suivante dans 24h</button>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">En cliquant, vous validez votre lecture de cette section et declenchez le decompte de 24h avant l'etape suivante.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4 : TEMOIGNER — Synthèse et mise en oeuvre -->
+    <section class="section" id="temoigner" data-step="4" style="background:var(--bg-warm);">
+      <div class="content-block">
+        <div class="section-header fade-in" style="margin-bottom:36px;">
+          <div class="section-eyebrow">Section 4</div>
+          <h2>Temoigner : Synthese et mise en oeuvre personnelle</h2>
+          <p>Integrer les quatre formes de dialogue dans sa vie quotidienne et son ministere.</p>
+        </div>
+
+        <!-- Podcasts -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M12 3a9 9 0 00-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 00-9-9z"/></svg>Podcasts (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">Les podcasts de cette etape seront bientot disponibles.</p>
+        </div>
+        <!-- Infographie -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>Infographie (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">L'infographie de cette etape sera bientot disponible.</p>
+        </div>
+
+        
+
+        <h3 class="fade-in">4.1 Ce qui peut etre partage, ce qui ne peut pas l'etre</h3>
+
+        <p class="fade-in">Le dialogue interreligieux catholique exige une <strong>clarte sans complaisance</strong> sur ce qui peut etre partage et ce qui ne peut pas l'etre. Cette distinction n'est pas un obstacle au dialogue ; elle en est la condition. Sans elle, le dialogue devient confusion ou syncretisme.</p>
+
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:32px;border:1px solid var(--border);margin:28px 0;">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--primary);margin-bottom:20px;">Ce qui peut etre partage</h3>
+          <ul style="margin:0 0 24px;padding:0;list-style:none;">
+            <li style="padding:10px 0;border-bottom:1px solid var(--border-light);font-size:14px;color:var(--text-secondary);"><strong style="color:#16a34a;">Dialogue de vie &mdash;</strong> Les joies et peines du quotidien, les preoccupations humaines, la convivialite.</li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--border-light);font-size:14px;color:var(--text-secondary);"><strong style="color:#16a34a;">Dialogue d'action &mdash;</strong> La collaboration pour la justice, la paix, la solidarite, la protection de la creation.</li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--border-light);font-size:14px;color:var(--text-secondary);"><strong style="color:#16a34a;">Dialogue d'echange &mdash;</strong> La connaissance mutuelle des traditions, la comprehension des convergences et divergences.</li>
+            <li style="padding:10px 0;font-size:14px;color:var(--text-secondary);"><strong style="color:#16a34a;">Dialogue d'experience &mdash;</strong> Le temoignage personnel, le silence commun, l'engagement caritatif.</li>
+          </ul>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--primary);margin-bottom:20px;">Ce qui ne peut PAS etre partage</h3>
+          <ul style="margin:0;padding:0;list-style:none;">
+            <li style="padding:10px 0;border-bottom:1px solid var(--border-light);font-size:14px;color:var(--text-secondary);"><strong style="color:#dc2626;">Proscrit &mdash;</strong> La participation aux rituels liturgiques de l'autre religion (priere du vendredi, priere commune liturgique non validee).</li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--border-light);font-size:14px;color:var(--text-secondary);"><strong style="color:#dc2626;">Proscrit &mdash;</strong> Le melange des rituels (&laquo; priere chretienne &raquo; dans une mosquee, recitation du Coran dans une église).</li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--border-light);font-size:14px;color:var(--text-secondary);"><strong style="color:#dc2626;">Proscrit &mdash;</strong> Le culte syncretique ou l'uniformisation des traditions.</li>
+            <li style="padding:10px 0;font-size:14px;color:var(--text-secondary);"><strong style="color:#dc2626;">Proscrit &mdash;</strong> L'adhesion aux doctrines de l'autre (relativisme religieux).</li>
+          </ul>
+        </div>
+
+        <h3 class="fade-in">4.2 Passage au Module 3</h3>
+
+        <p class="fade-in">Ce module vous a permis de comprendre et de distinguer les <strong>quatre formes complementaires</strong> du dialogue interreligieux. Vous avez appris a les reconnaitre dans des situations concretes et a adopter la posture adequate pour chacune. Le Module 3 vous invitera a explorer une figure spirituelle commune aux chretiens et aux musulmans : <strong>Marie, la Vierge Marie</strong>, qui constitue un pont privilegie entre nos prieres.</p>
+
+        <div class="fade-in" style="background:linear-gradient(135deg,rgba(46,42,92,0.04),rgba(46,42,92,0.02));border-radius:var(--radius);padding:32px;border:1px solid var(--border);margin:28px 0;text-align:center;">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--primary);margin-bottom:16px;">Module 3 &mdash; Marie, Pont entre nos Prieres</h3>
+          <p style="font-size:15px;color:var(--text-secondary);line-height:1.7;margin-bottom:24px;">Theologie comparee et rencontre spirituelle. Explorez la place de Marie dans le Coran et les Evangiles, les points de convergence et les divergences fondamentales.</p>
+          <a href="javascript:void(0)" onclick="openAuthModal('module3.html')" class="btn btn-primary">Decouvrir le Module 3 &rarr;</a>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:16px;margin-bottom:0;">Prerequis : Modules 1 et 2 valides</p>
+        </div>
+
+        <div class="key-box fade-in">
+          <h4>Points cles a retenir</h4>
+          <ul>
+            <li>Les quatre formes de dialogue sont complementaires et s'enrichissent mutuellement.</li>
+            <li>Chaque forme a ses attitudes requises et ses pieges specifiques.</li>
+            <li>On ne peut pas sauter une etape : le dialogue de vie est le fondement.</li>
+            <li>La distinction entre ce qui peut etre partage et ce qui ne peut pas l'etre est essentielle.</li>
+            <li>Le Module 3 explorera Marie comme pont de dialogue entre chretiens et musulmans.</li>
+          </ul>
+        </div>
+
+        <!-- Magisterium AI -->
+        <div class="fade-in" style="background:linear-gradient(135deg,rgba(46,42,92,0.03),rgba(46,42,92,0.01));border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);margin:24px 0 16px;">
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+            <div style="flex:1;min-width:200px;">
+              <h4 style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:4px;">Approfondir avec Magisterium AI</h4>
+              <p style="font-size:12px;color:var(--text-secondary);margin:0;line-height:1.5;">Posez vos questions sur les documents du Magistere. L'IA explore les archives et renvoie aux paragraphes exacts.</p>
+            </div>
+            <a href="https://www.magisterium.com/fr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:100px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--accent);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;transition:all 0.3s ease;flex-shrink:0;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(46,42,92,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">Consulter Magisterium AI &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Validation etape 4 -->
+        <div class="fade-in step-complete-btn" data-step="4" style="text-align:center;margin-top:32px;">
+          <button onclick="completeStep(4)" class="btn btn-primary" style="font-size:14px;padding:14px 32px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:6px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>J'ai termine cette etape — Module termine</button>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">Felicitations ! Vous avez complete ce module. Passez au quiz pour valider vos acquis.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="section" style="background:var(--bg-warm);" id="quiz">
+      <div class="content-block">
+        <div class="section-header fade-in">
+          <div class="section-eyebrow">Evaluation formative</div>
+          <h2>Quiz : Les 4 Formes de Dialogue en Pratique</h2>
+          <p>Dix questions pour verifier votre maitrise des formes concretes du dialogue</p>
+        </div>
+        <div id="quiz-container" class="quiz-wrap fade-in"></div>
+      </div>
+    </section>
+
+    <!-- Reflexions -->
+    <section class="section" id="reflexions">
+      <div class="content-block">
+        <div class="section-header fade-in">
+          <div class="section-eyebrow">Approfondissement</div>
+          <h2>Questions de reflexion pastorale</h2>
+        </div>
+
+        <div class="reflex-card fade-in">
+          <h4>Reflexion 1</h4>
+          <p>Dans votre contexte personnel (quartier, travail, paroisse), identifiez une situation ou vous pourriez initier un dialogue de vie avec un musulman. Quel geste concret pourriez-vous poser cette semaine ?</p>
+        </div>
+        <div class="reflex-card fade-in">
+          <h4>Reflexion 2</h4>
+          <p>Votre paroisse ou association mene-t-elle des actions de solidarite auxquelles des musulmans pourraient etre associes ? Comment passer d'une action &laquo; catholique &raquo; a une action &laquo; catholique et musulmane ensemble &raquo; ?</p>
+        </div>
+        <div class="reflex-card fade-in">
+          <h4>Reflexion 3</h4>
+          <p>Reflechissez a un moment ou vous avez participe a un dialogue d'echange ou d'experience. Qu'est-ce qui a bien fonctionne ? Qu'auriez-vous fait differemment avec le recul ?</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Medias -->
+    <section class="section" style="background:var(--bg-warm);" id="medias">
+      <div class="content-block">
+        <div class="section-header fade-in">
+          <div class="section-eyebrow">Medias associes</div>
+          <h2>Contenus complementaires</h2>
+        </div>
+        <div class="media-grid fade-in">
+          
+          
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation module -->
+    <section class="section" style="padding-top:20px;">
+      <div class="nav-lesson fade-in">
+        <a href="module1.html" class="btn btn-outline btn-sm" style="color:var(--primary);border-color:var(--border);">&larr; Module 1</a>
+        <span style="font-size:14px;color:var(--text-muted);">Module 2 sur 5</span>
+        <a href="javascript:void(0)" onclick="openAuthModal('module3.html')" class="btn btn-outline btn-sm" style="color:var(--primary);border-color:var(--border);">Module 3 &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="orb-f"></div>
+    <div class="footer-inner">
+      <div>
+        <h4>DIALOGOS</h4>
+        <p>Formation au dialogue interreligieux.<br><a href="https://sdilille.github.io/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">Service pour le Dialogue Interreligieux</a><br>Diocese de Lille</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px;line-height:1.6;">Maison Paul VI — Dialogue interreligieux<br>74 Rue Hippolyte Lefebvre<br>59800 Lille<br>03 20 06 43 02<br><a href="mailto:jerome.montois@lille.catholique.fr" style="color:var(--accent);display:inline;padding:0;">jerome.montois@lille.catholique.fr</a></p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="module1.html">Module 1</a>
+        <a href="javascript:void(0)">Module 2</a>
+        <a href="glossaire.html">Glossaire</a>
+        <a href="bibliographie.html">Bibliographie</a>
+      </div>
+      <div>
+        <h4>Sources magisterielles</h4>
+        <a href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_fr.html" target="_blank" rel="noopener"><em>Nostra Aetate</em> (1965)</a>
+        <a href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_fr.html" target="_blank" rel="noopener"><em>Lumen Gentium</em> (1964)</a>
+        <a href="https://www.vatican.va/content/john-paul-ii/fr/encyclicals/documents/hf_jp-ii_enc_07121990_redemptoris-missio.html" target="_blank" rel="noopener"><em>Redemptoris Missio</em> (1990)</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:jerome.montois@lille.catholique.fr">jerome.montois@lille.catholique.fr</a>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px;line-height:1.6;">Maison Paul VI<br>74 Rue Hippolyte Lefebvre<br>59800 Lille<br>03 20 06 43 02<br><a href="mailto:jerome.montois@lille.catholique.fr" style="color:var(--accent);display:inline;padding:0;">jerome.montois@lille.catholique.fr</a></p>
+      </div>
+    </div>
+    <p style="text-align:center;padding:0 32px 16px;font-size:13px;color:rgba(255,255,255,0.4);"><a href="https://sdilille.github.io/mentions.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Mentions legales</a></p>
+    <div class="footer-bottom" style="padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">&copy; 2026 Diocese de Lille — Service pour le Dialogue Interreligieux. Tous droits reserves.</div>
+  </footer>
+
+  <script>
+    window.DIALOGOS_QUIZ = {
+      module2: [
+        {
+          question: "Le dialogue de vie peut-il etre une strategie discrete pour evangeliser ?",
+          options: ["Oui, c'est une approche douce et efficace.", "Non, toute intention cachee corrompt le dialogue et est immediatement percue.", "Seulement si l'intention est devoilee progressivement.", "Cela depend du contexte culturel."],
+          correct: 1,
+          feedback: "Exact. Le dialogue de vie exige une sincerite totale. Toute intention cachee d'evangelisation est immédiatement percue par l'autre et detruit la confiance."
+        },
+        {
+          question: "Quelle forme de dialogue correspond a la collaboration pour le developpement integral de l'homme ?",
+          options: ["Dialogue de vie", "Dialogue d'action", "Dialogue d'echange", "Dialogue d'experience"],
+          correct: 1,
+          feedback: "Exact. Le dialogue d'action est defini comme la collaboration pour le developpement integral de l'homme et la liberation des oppressions (Dialogue et Annonce, §29)."
+        },
+        {
+          question: "Quelle forme de dialogue convient le mieux a un groupe d'etude theologique interreligieux ?",
+          options: ["Dialogue de vie", "Dialogue d'action", "Dialogue d'echange", "Dialogue d'experience"],
+          correct: 2,
+          feedback: "Exact. Le dialogue d'echange correspond a l'approfondissement des patrimoines religieux respectifs par des specialistes et des theologiens (§30)."
+        },
+        {
+          question: "Est-il permis a un catholique de participer a la priere du vendredi (jumu'a) dans une mosquee ?",
+          options: ["Oui, c'est un geste de respect et de fraternite.", "Non, la participation aux rituels liturgiques d'une autre religion est proscrite par le Magistere.", "Oui, mais seulement s'il ne prie pas activement.", "Cela depend de l'autorisation de l'eveque local."],
+          correct: 1,
+          feedback: "Exact. La participation aux rituels liturgiques d'une autre religion est proscrite par le Magistere (Dialogue et Annonce, §35). Le respect ne passe pas par la participation aux rituels."
+        },
+        {
+          question: "Quelle est la regle d'or du dialogue d'action ?",
+          options: ["Convertir l'autre par l'exemple.", "Ne jamais instrumentaliser l'autre.", "Privilegier les projets catholiques.", "Eviter tout contact religieux."],
+          correct: 1,
+          feedback: "Exact. La regle d'or du dialogue d'action est de ne jamais instrumentaliser l'autre. La collaboration doit etre authentiquement bidirectionnelle."
+        },
+        {
+          question: "Le dialogue d'experience peut-il inclure la participation a des rituels liturgiques de l'autre religion ?",
+          options: ["Oui, si c'est fait dans un esprit de partage.", "Non, les rituels liturgiques communs non valides sont proscrits.", "Oui, mais seulement en presence d'un pretre.", "Non, mais le silence commun est possible."],
+          correct: 1,
+          feedback: "Exact. Les rituels liturgiques communs non valides par l'autorite ecclesiale sont proscrits. Cependant, le silence commun et le temoignage personnel sont possibles."
+        },
+        {
+          question: "Quel niveau du dialogue d'echange correspond a la theologie des 'semences du Verbe' ?",
+          options: ["Niveau informationnel", "Niveau explicatif", "Niveau hermeneutique"],
+          correct: 2,
+          feedback: "Exact. La theologie des semences du Verbe appartient au niveau hermeneutique du dialogue d'echange, qui suppose une formation theologique avancee dans les deux traditions."
+        },
+        {
+          question: "Les 4 formes de dialogue doivent-elles etre pratiquees simultanement pour etre efficaces ?",
+          options: ["Vrai, il faut toutes les pratiquer en meme temps.", "Faux, elles s'enrichissent mutuellement mais peuvent etre pratiquees selon les contextes.", "Vrai, mais seulement dans un cadre institutionnel."],
+          correct: 1,
+          feedback: "Exact. Les quatre formes s'enrichissent mutuellement mais peuvent etre pratiquees selon les contextes et les opportunites. On ne peut pas sauter une etape, mais on ne doit pas forcer non plus."
+        },
+        {
+          question: "Le dialogue d'echange vise-t-il a trouver un 'minimum commun' entre les religions ?",
+          options: ["Vrai, c'est l'objectif principal.", "Faux, ce n'est ni une negociation ni un relativisme.", "Vrai, mais seulement au niveau ethique."],
+          correct: 1,
+          feedback: "Exact. Le dialogue d'echange n'est pas une negociation visant un minimum commun. Il vise la comprehension mutuelle authentique, fondee sur la rigueur intellectuelle et l'humilite."
+        },
+        {
+          question: "Dans un projet caritatif catholico-musulman, qui doit prendre les decisions ?",
+          options: ["Le responsable catholique, car c'est une initiative d'Église.", "Les deux parties de maniere equitable, dans un dialogue d'action authentique.", "Un conseil neutre exterieur aux deux traditions.", "La communaute la plus nombreuse."],
+          correct: 1,
+          feedback: "Exact. Dans un dialogue d'action authentique, les decisions doivent etre prises de maniere equitable par les deux parties. Sinon, il s'agit d'instrumentalisation, pas de dialogue."
+        }
+      ]
+    };
+  </script>
+
+  <script src="js/quiz.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/progression.js"></script>
+</body>
+</html>

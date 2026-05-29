@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 5 — La Paix, Salam / Shalom | DIALOGOS</title>
+  <meta name="description" content="Module 5 du parcours DIALOGOS : ethique sociale et non-violence. La paix dans les traditions islamique (salam) et chretienne (shalom).">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ── STICKY FOOTER FIX ── -->
+  <style>
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+    main.main { flex: 1 0 auto; }
+    .footer    { flex-shrink: 0; margin-top: 0; }
+    #confetti-canvas {
+      position: fixed !important;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body data-module="5">
+  <div class="loader">
+    <div class="loader-ring-wrap">
+      <svg class="ring-outer" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10" stroke="rgba(201,149,93,0.3)" stroke-dasharray="60 40"/></svg>
+      <svg class="ring-inner" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z" stroke="rgba(201,149,93,0.5)"/></svg>
+      <svg class="ring-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg>
+    </div>
+    <div class="loader-label"><div class="title">Chargement</div><div class="subtitle">DIALOGOS</div></div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg></div>DIALOGOS
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" onclick="event.preventDefault();this.parentElement.classList.toggle('open')">Modules <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="javascript:void(0)" onclick="openAuthModal('module1.html')">Module 1 &mdash; Fondements</a></li>
+            <li><a href="javascript:void(0)" onclick="openAuthModal('module2.html')">Module 2 &mdash; 4 Formes</a></li>
+            <li><a href="javascript:void(0)" onclick="openAuthModal('module3.html')">Module 3 &mdash; Marie</a></li>
+            <li><a href="javascript:void(0)" onclick="openAuthModal('module4.html')">Module 4 &mdash; Jeune</a></li>
+            <li><a href="javascript:void(0)" onclick="openAuthModal('module5.html')">Module 5 &mdash; Paix</a></li>
+          </ul>
+        </li>
+        <li><a href="glossaire.html">Glossaire</a></li>
+        <li><a href="bibliographie.html">Bibliographie</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main">
+    <section class="hero hero-page">
+      <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+      <div class="hero-inner" style="max-width:900px;"><div class="hero-eyebrow">Module 5 sur 5</div><h1 style="font-size:clamp(36px,5.5vw,64px);margin-bottom:16px;">La Paix, Salam / Shalom</h1><p class="hero-desc" style="max-width:640px;">Ethique sociale et non-violence. L'aboutissement du parcours DIALOGOS.</p></div>
+    </section>
+
+    <div id="step-progress" style="position:sticky;top:56px;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);padding:16px 32px;">
+      <div style="max-width:760px;margin:0 auto;display:flex;align-items:center;gap:8px;justify-content:space-between;">
+        <div class="step-dot" data-step="1" style="flex:1;text-align:center;"><div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin:0 auto 6px;">1</div><div style="font-size:10px;font-weight:600;color:var(--text-secondary);letter-spacing:0.5px;">APPRENDRE</div></div><div style="flex:1;height:2px;background:var(--border);border-radius:1px;margin-top:-16px;"></div>
+        <div class="step-dot" data-step="2" style="flex:1;text-align:center;"><div style="width:32px;height:32px;border-radius:50%;background:var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin:0 auto 6px;">2</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);letter-spacing:0.5px;">COMPRENDRE</div></div><div style="flex:1;height:2px;background:var(--border);border-radius:1px;margin-top:-16px;"></div>
+        <div class="step-dot" data-step="3" style="flex:1;text-align:center;"><div style="width:32px;height:32px;border-radius:50%;background:var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin:0 auto 6px;">3</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);letter-spacing:0.5px;">RENCONTRER</div></div><div style="flex:1;height:2px;background:var(--border);border-radius:1px;margin-top:-16px;"></div>
+        <div class="step-dot" data-step="4" style="flex:1;text-align:center;"><div style="width:32px;height:32px;border-radius:50%;background:var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin:0 auto 6px;">4</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);letter-spacing:0.5px;">TEMOIGNER</div></div>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top:40px;">
+      <div class="section-header fade-in"><div class="section-eyebrow">Donnees pedagogiques</div><h2>Metadonnees du module</h2></div>
+      <div class="card-grid" style="margin-bottom:40px;">
+        <div class="card fade-in stagger-1"><div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></svg></div><h3>Niveau</h3><p>Avance, ethique sociale. Prerequis : les 4 premiers modules.</p></div>
+        <div class="card fade-in stagger-2"><div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0012 4c-4.97 0-9 4.03-9 9s4.02 9 9 9a8.994 8.994 0 007.03-14.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg></div><h3>Temps d'etude</h3><p>Environ 50 minutes.</p></div>
+        <div class="card fade-in stagger-3"><div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></div><h3>Documents magisteriels</h3><p><em>Fratelli Tutti</em> &sect;198, <em>Evangelii Gaudium</em> &sect;250, Document Abu Dhabi (2019).</p></div>
+      </div>
+      <div class="objectifs-box fade-in"><h4>Objectifs d'apprentissage</h4><ul><li>Comprendre les concepts de <em>salam</em> et <em>shalom</em> dans leurs traditions respectives.</li><li>Distinguer la paix comme absence de guerre et la paix comme presence de justice.</li><li>Identifier les fondements scripturaires de la non-violence dans les deux traditions.</li><li>S'engager concretement pour la paix dans son territoire.</li></ul></div>
+    </section>
+
+    <!-- S1 -->
+    <section class="section" id="apprendre" data-step="1">
+      <div class="content-block">
+        <div class="section-header fade-in" style="margin-bottom:36px;"><div class="section-eyebrow">Section 1</div><h2>Apprendre : <em>Salam</em> et <em>Shalom</em></h2><p>Les racines semitiques communes d'une meme aspiration.</p></div>
+        <!-- Emplacement podcasts -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M12 3a9 9 0 00-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 00-9-9z"/></svg>Podcasts (en construction)</h4>
+          <p style="font-size:12px;color:var(--text-muted);margin:0;"><em>Les contenus audio seront associes progressivement a chaque section du module.</em></p>
+        </div>
+        <!-- Infographie -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>Infographie (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">L'infographie de cette etape sera bientot disponible.</p>
+        </div>
+
+
+        <h3 class="fade-in">1.1 <em>Salam</em> dans l'Islam</h3>
+        <p class="fade-in">Le mot arabe <em>salam</em> (سلام) derive de la meme racine semitique que l'hebreu <em>shalom</em>. Il signifie &laquo; paix &raquo;, mais aussi &laquo; salut &raquo;, &laquo; securite &raquo; et &laquo; bien-etre &raquo;. Dans l'Islam, <em>salam</em> est un attribut de Dieu (<em>al-Salam</em>, le Pacifique) et une salutation rituelle entre croyants (&laquo; <em>As-salamu alaykum</em> &raquo; &mdash; &laquo; la paix soit sur vous &raquo;).</p>
+        <div class="cite-box fade-in"><p>&laquo; O vous qui croyez ! N'entrez pas dans des maisons autres que les votres sans en avoir demande la permission et sans avoir salue (<em>salam</em>) leurs habitants. &raquo;</p><span class="source">&mdash; Coran 24:27.</span></div>
+        <p class="fade-in">Le concept de <em>salam</em> en Islam englobe : la paix interieure (soumission a Dieu), la paix sociale (justice et fraternite), et la paix universelle (mission prophetique). C'est dans ce sens que <em>Fratelli Tutti</em> &sect;198 l'evoque : &laquo; Le dialogue est un chemin qui nous fait sortir de nos propres commodites pour accueillir l'autre. &raquo;</p>
+
+        <h3 class="fade-in">1.2 <em>Shalom</em> dans la Bible</h3>
+        <p class="fade-in">Le mot hebreu <em>shalom</em> (שָׁלוֹם) est l'un des plus riches de la Bible. Il ne designe pas seulement l'absence de guerre, mais la <strong>plenitude du bien-etre</strong> : l'integrite, la justice, la concorde, la prosperite partagee. <em>Shalom</em> est ce que Dieu offre et ce que les hommes doivent construire.</p>
+        <div class="cite-box fade-in"><p>&laquo; Je laisse la paix (<em>shalom</em>) en vous, je vous donne ma paix ; je ne vous la donne pas comme le monde la donne. &raquo;</p><span class="source">&mdash; Jean 14:27.</span></div>
+        <p class="fade-in">Le <em>shalom</em> christique est distinct du &laquo; paix du monde &raquo; : il est fondement et non consequence. Il decoule de la reconciliation operee par le Christ entre l'homme et Dieu, et entre les hommes entre eux. C'est pourquoi le chretien est appele a etre &laquo; artisan de paix &raquo; (Mt 5:9).</p>
+
+        <!-- Magisterium AI -->
+        <div class="fade-in" style="background:linear-gradient(135deg,rgba(46,42,92,0.03),rgba(46,42,92,0.01));border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);margin:24px 0 16px;">
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+            <div style="flex:1;min-width:200px;">
+              <h4 style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:4px;">Approfondir avec Magisterium AI</h4>
+              <p style="font-size:12px;color:var(--text-secondary);margin:0;line-height:1.5;">Posez vos questions sur les documents du Magistere. L'IA explore les archives et renvoie aux paragraphes exacts.</p>
+            </div>
+            <a href="https://www.magisterium.com/fr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:100px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--accent);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;transition:all 0.3s ease;flex-shrink:0;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(46,42,92,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">Consulter Magisterium AI &rarr;</a>
+          </div>
+        </div>
+
+        <div class="key-box fade-in"><h4>Points cles</h4><ul><li><em>Salam</em> et <em>shalom</em> partagent la meme racine semitique S-L-M.</li><li><em>Salam</em> : attribut de Dieu, salutation rituelle, dimension sociale.</li><li><em>Shalom</em> : plenitude du bien-etre, reconciliation christique.</li><li>Les deux traditions appellent le croyant a etre artisan de paix.</li></ul></div>
+
+        <!-- Validation etape 1 -->
+        <div class="fade-in step-complete-btn" data-step="1" style="text-align:center;margin-top:32px;">
+          <button onclick="completeStep(1)" class="btn btn-primary" style="font-size:14px;padding:14px 32px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:6px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>J'ai termine cette etape &mdash; Verrouiller la suivante dans 24h</button>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">En cliquant, vous validez votre lecture de cette section et declenchez le decompte de 24h avant l'etape suivante.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- S2 -->
+    <section class="section" id="comprendre" data-step="2" style="background:var(--bg-warm);">
+      <div class="content-block">
+        <div class="section-header fade-in" style="margin-bottom:36px;"><div class="section-eyebrow">Section 2</div><h2>Comprendre : Non-violence et justice</h2><p>Les fondements scripturaires de l'engagement pour la paix.</p></div>
+        <!-- Emplacement podcasts -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M12 3a9 9 0 00-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 00-9-9z"/></svg>Podcasts (en construction)</h4>
+          <p style="font-size:12px;color:var(--text-muted);margin:0;"><em>Les contenus audio seront associes progressivement a chaque section du module.</em></p>
+        </div>
+        <!-- Infographie -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>Infographie (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">L'infographie de cette etape sera bientot disponible.</p>
+        </div>
+
+
+        <h3 class="fade-in">2.1 La non-violence dans le Magistere catholique</h3>
+        <div class="cite-box fade-in"><p>&laquo; Chaque guerre laisse le monde plus pire qu'il n'etait. Les guerres ne se resolvent jamais ; elles engendrent toujours d'autres conflits. &raquo;</p><span class="source">&mdash; Francois, <em>Fratelli Tutti</em>, &sect; 261. AAS 112 (2020), p. 1142.</span></div>
+        <p class="fade-in">Dans <em>Fratelli Tutti</em> &sect;258-262, le pape Francois developpe une <strong>ethique de la non-violence</strong> comme style politique fondee sur l'Evangile. Il affirme que la paix authentique n'est pas seulement l'absence de guerre, mais la <strong>presence active de la justice</strong>. Le pape cite le Document sur la Fraternite Humaine d'Abu Dhabi (2019) : &laquo; Dieu ne veut pas que Son nom soit utilise pour terroriser les hommes. &raquo;</p>
+
+        <h3 class="fade-in">2.2 La justice (<em>'adl</em>) dans l'Islam</h3>
+        <p class="fade-in">Dans la tradition islamique, la paix (<em>salam</em>) est inseparable de la justice (<em>'adl</em> عَدْل). Le concept de <em>jihad</em> (جهاد), souvent mal compris, designe avant tout le &laquo; combat interieur &raquo; pour la rectitude spirituelle, et dans son acceptation sociale, le combat pour etablir la justice. Le Coran affirme :</p>
+        <div class="cite-box fade-in"><p>&laquo; O vous qui croyez ! Soyez des justes temoins pour Dieu. &raquo;</p><span class="source">&mdash; Coran 5:8.</span></div>
+
+
+        <!-- Magisterium AI -->
+        <div class="fade-in" style="background:linear-gradient(135deg,rgba(46,42,92,0.03),rgba(46,42,92,0.01));border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);margin:24px 0 16px;">
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+            <div style="flex:1;min-width:200px;">
+              <h4 style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:4px;">Approfondir avec Magisterium AI</h4>
+              <p style="font-size:12px;color:var(--text-secondary);margin:0;line-height:1.5;">Posez vos questions sur les documents du Magistere. L'IA explore les archives et renvoie aux paragraphes exacts.</p>
+            </div>
+            <a href="https://www.magisterium.com/fr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:100px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--accent);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;transition:all 0.3s ease;flex-shrink:0;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(46,42,92,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">Consulter Magisterium AI &rarr;</a>
+          </div>
+        </div>
+
+        <div class="key-box fade-in"><h4>Points cles</h4><ul><li><em>Fratelli Tutti</em> &sect;261 : la non-violence comme style politique (AAS 112).</li><li>La paix = presence de la justice, pas seulement absence de guerre.</li><li>En Islam, <em>salam</em> est inseparable de <em>'adl</em> (justice).</li><li>Le Document d'Abu Dhabi (2019) : &laquo; Dieu ne veut pas que Son nom soit utilise pour terroriser &raquo;.</li></ul></div>
+
+        <!-- Validation etape 2 -->
+        <div class="fade-in step-complete-btn" data-step="2" style="text-align:center;margin-top:32px;">
+          <button onclick="completeStep(2)" class="btn btn-primary" style="font-size:14px;padding:14px 32px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:6px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>J'ai termine cette etape &mdash; Verrouiller la suivante dans 24h</button>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">En cliquant, vous validez votre lecture de cette section et declenchez le decompte de 24h avant l'etape suivante.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- S3 -->
+    <section class="section" id="rencontrer" data-step="3">
+      <div class="content-block">
+        <div class="section-header fade-in" style="margin-bottom:36px;"><div class="section-eyebrow">Section 3</div><h2>Rencontrer : Le Document d'Abu Dhabi (2019)</h2><p>Un tournant historique pour le dialogue et la paix.</p></div>
+        <!-- Emplacement podcasts -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M12 3a9 9 0 00-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 00-9-9z"/></svg>Podcasts (en construction)</h4>
+          <p style="font-size:12px;color:var(--text-muted);margin:0;"><em>Les contenus audio seront associes progressivement a chaque section du module.</em></p>
+        </div>
+        <!-- Infographie -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>Infographie (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">L'infographie de cette etape sera bientot disponible.</p>
+        </div>
+
+
+        <h3 class="fade-in">3.1 Un document historique</h3>
+        <p class="fade-in">Signe le 4 fevrier 2019 par le pape Francois et le Grand Imam d'Al-Azhar Ahmad al-Tayyeb, le <strong>Document sur la Fraternite Humaine</strong> constitue une etape decisive dans l'histoire du dialogue islamo-catholique. Il affirme que la <strong>diversite religieuse est voulue par Dieu</strong> et appelle a la cooperation entre croyants pour la paix.</p>
+        <div class="cite-box fade-in"><p>&laquo; Au nom de la fraternite humaine qui embrasse tous les etres humains... nous declarons l'adoption d'une culture du dialogue comme chemin ; de la cooperation mutuelle comme code de conduite ; de la comprehension reciproque comme methode et norme. &raquo;</p><span class="source">&mdash; Document sur la Fraternite Humaine, Abu Dhabi, 4 fevrier 2019.</span></div>
+
+        <h3 class="fade-in">3.2 Principes fondamentaux</h3>
+        <ul>
+          <li class="fade-in"><strong>La liberte est un droit</strong> : chaque personne a le droit de chercher la verite librement.</li>
+          <li class="fade-in"><strong>La justice est une condition</strong> : sans justice, il n'y a pas de paix veritable.</li>
+          <li class="fade-in"><strong>La diversite est voulue par Dieu</strong> : &laquo; Il a fait de vous des nations et des tribus pour que vous vous connaissiez &raquo; (Coran 49:13).</li>
+          <li class="fade-in"><strong>Le dialogue est le chemin</strong> : &laquo; Le dialogue interreligieux est une condition necessaire de la paix dans le monde &raquo; (<em>Evangelii Gaudium</em> &sect;250).</li>
+        </ul>
+
+
+        <!-- Magisterium AI -->
+        <div class="fade-in" style="background:linear-gradient(135deg,rgba(46,42,92,0.03),rgba(46,42,92,0.01));border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);margin:24px 0 16px;">
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+            <div style="flex:1;min-width:200px;">
+              <h4 style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:4px;">Approfondir avec Magisterium AI</h4>
+              <p style="font-size:12px;color:var(--text-secondary);margin:0;line-height:1.5;">Posez vos questions sur les documents du Magistere. L'IA explore les archives et renvoie aux paragraphes exacts.</p>
+            </div>
+            <a href="https://www.magisterium.com/fr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:100px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--accent);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;transition:all 0.3s ease;flex-shrink:0;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(46,42,92,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">Consulter Magisterium AI &rarr;</a>
+          </div>
+        </div>
+
+        <div class="key-box fade-in"><h4>Points cles</h4><ul><li>Document d'Abu Dhabi (2019) : signature conjointe pape-Grand Imam.</li><li>La diversite religieuse est voulue par Dieu.</li><li>Culture du dialogue, cooperation mutuelle, comprehension reciproque.</li><li><em>Evangelii Gaudium</em> &sect;250 : dialogue comme condition necessaire de la paix.</li></ul></div>
+
+        <!-- Validation etape 3 -->
+        <div class="fade-in step-complete-btn" data-step="3" style="text-align:center;margin-top:32px;">
+          <button onclick="completeStep(3)" class="btn btn-primary" style="font-size:14px;padding:14px 32px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:6px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>J'ai termine cette etape &mdash; Verrouiller la suivante dans 24h</button>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">En cliquant, vous validez votre lecture de cette section et declenchez le decompte de 24h avant l'etape suivante.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- S4 -->
+    <section class="section" id="temoigner" data-step="4" style="background:var(--bg-warm);">
+      <div class="content-block">
+        <div class="section-header fade-in" style="margin-bottom:36px;"><div class="section-eyebrow">Section 4</div><h2>Temoigner : L'engagement pour la paix</h2><p>L'aboutissement du parcours DIALOGOS.</p></div>
+        <!-- Emplacement podcasts -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M12 3a9 9 0 00-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 00-9-9z"/></svg>Podcasts (en construction)</h4>
+          <p style="font-size:12px;color:var(--text-muted);margin:0;"><em>Les contenus audio seront associes progressivement a chaque section du module.</em></p>
+        </div>
+        <!-- Infographie -->
+        <div class="fade-in" style="background:var(--surface);border-radius:var(--radius);padding:24px 28px;border:1px solid var(--border);margin:28px 0;">
+          <h4 style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>Infographie (en construction)</h4>
+          <p style="font-size:13px;color:var(--text-secondary);margin:0;">L'infographie de cette etape sera bientot disponible.</p>
+        </div>
+
+
+        <h3 class="fade-in">4.1 Les fruits du parcours</h3>
+        <p class="fade-in">Vous avez parcouru cinq modules qui vous ont permis de :</p>
+        <ul>
+          <li class="fade-in"><strong>Module 1</strong> : comprendre les <strong>fondements doctrinaux</strong> du dialogue (documents du Magistere).</li>
+          <li class="fade-in"><strong>Module 2</strong> : distinguer et pratiquer les <strong>quatre formes de dialogue</strong>.</li>
+          <li class="fade-in"><strong>Module 3</strong> : decouvrir <strong>Marie comme pont</strong> entre nos prieres.</li>
+          <li class="fade-in"><strong>Module 4</strong> : explorer le <strong>jeune comme anthropologie partagee</strong>.</li>
+          <li class="fade-in"><strong>Module 5</strong> : s'engager pour la <strong>paix</strong> (<em>salam</em> / <em>shalom</em>).</li>
+        </ul>
+
+        <h3 class="fade-in">4.2 Un engagement concret</h3>
+        <p class="fade-in">Le parcours DIALOGOS ne se termine pas par une attestation. Il se termine par un <strong>engagement concret</strong> dans votre territoire. Le dialogue interreligieux n'est pas une competence theorique ; c'est une <strong>maniere de vivre</strong> votre foi au quotidien. Comme le rappelle <em>Fratelli Tutti</em> &sect;285 :</p>
+        <div class="cite-box fade-in"><p>&laquo; Commencons a nouveau depuis le Christ pour reconnaitre que le chemin vers la paix universelle a un coeur : l'homme, avec sa dignite inviolable. &raquo;</p><span class="source">&mdash; <em>Fratelli Tutti</em>, &sect; 285. AAS 112 (2020), p. 1160.</span></div>
+
+        <h3 class="fade-in">4.3 Invitation a la formation en presentiel</h3>
+        <p class="fade-in">Pour approfondir ces questions et developper les competences pratiques necessaires, une <strong>formation en presentiel</strong> est proposee par le Service pour le Dialogue Interreligieux du diocese de Lille.</p>
+        <div class="fade-in" style="background:linear-gradient(135deg,rgba(46,42,92,0.04),rgba(46,42,92,0.02));border-radius:var(--radius);padding:32px;border:1px solid var(--border);margin:28px 0;text-align:center;">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--primary);margin-bottom:16px;">Vous avez termine le parcours DIALOGOS</h3>
+          <p style="font-size:15px;color:var(--text-secondary);line-height:1.7;margin-bottom:24px;">Felicitations ! Vous avez accompli les 5 modules de formation. Pour aller plus loin, contactez le Service pour le Dialogue Interreligieux.</p>
+          <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+            <a href="mailto:jerome.montois@lille.catholique.fr" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:6px;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Contacter le Service</a>
+            <a href="tel:+33320064302" class="btn btn-outline" style="color:var(--primary);border-color:var(--border);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>03 20 06 43 02</a>
+          </div>
+        </div>
+
+
+        <!-- Magisterium AI -->
+        <div class="fade-in" style="background:linear-gradient(135deg,rgba(46,42,92,0.03),rgba(46,42,92,0.01));border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);margin:24px 0 16px;">
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+            <div style="flex:1;min-width:200px;">
+              <h4 style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:4px;">Approfondir avec Magisterium AI</h4>
+              <p style="font-size:12px;color:var(--text-secondary);margin:0;line-height:1.5;">Posez vos questions sur les documents du Magistere. L'IA explore les archives et renvoie aux paragraphes exacts.</p>
+            </div>
+            <a href="https://www.magisterium.com/fr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:100px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--accent);text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;transition:all 0.3s ease;flex-shrink:0;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(46,42,92,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">Consulter Magisterium AI &rarr;</a>
+          </div>
+        </div>
+
+        <div class="key-box fade-in"><h4>Points cles</h4><ul><li>Le parcours DIALOGOS couvre 5 modules : fondements, 4 formes, Marie, jeune, paix.</li><li>Le dialogue est une dimension intrinseque de la mission de l'Église.</li><li><em>Fratelli Tutti</em> &sect;285 : le chemin vers la paix a un coeur, l'homme (AAS 112).</li><li>Une formation en presentiel est proposee pour approfondir.</li><li>Contact : jerome.montois@lille.catholique.fr — 03 20 06 43 02.</li></ul></div>
+
+        <!-- Validation etape 4 -->
+        <div class="fade-in step-complete-btn" data-step="4" style="text-align:center;margin-top:32px;">
+          <button onclick="completeStep(4)" class="btn btn-primary" style="font-size:14px;padding:14px 32px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:6px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>J'ai termine cette etape — Parcours termine</button>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">Felicitations ! Vous avez complete le parcours DIALOGOS. Passez au quiz final pour valider vos acquis.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="section" style="background:var(--bg-warm);" id="quiz">
+      <div class="content-block">
+        <div class="section-header fade-in"><div class="section-eyebrow">Evaluation formative</div><h2>Quiz : La Paix, Salam / Shalom</h2></div>
+        <div id="quiz-container" class="quiz-wrap fade-in"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:20px;">
+      <div class="nav-lesson fade-in">
+        <a href="module4.html" class="btn btn-outline btn-sm" style="color:var(--primary);border-color:var(--border);">&larr; Module 4</a>
+        <span style="font-size:14px;color:var(--text-muted);">Module 5 sur 5 — Fin du parcours</span>
+        <a href="index.html" class="btn btn-outline btn-sm" style="color:var(--primary);border-color:var(--border);">Retour a l'accueil &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="orb-f"></div>
+    <div class="footer-inner">
+      <div><h4>DIALOGOS</h4><p>Formation au dialogue interreligieux.<br><a href="https://sdilille.github.io/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">Service pour le Dialogue Interreligieux</a><br>Diocese de Lille</p><p style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px;line-height:1.6;">Maison Paul VI<br>74 Rue Hippolyte Lefebvre<br>59800 Lille<br>03 20 06 43 02</p></div>
+      <div><h4>Navigation</h4><a href="index.html">Accueil</a><a href="module1.html">Module 1</a><a href="module2.html">Module 2</a><a href="module3.html">Module 3</a><a href="module4.html">Module 4</a><a href="glossaire.html">Glossaire</a></div>
+      <div><h4>Sources</h4><a href="https://www.vatican.va/content/francesco/fr/encyclicals/documents/papa-francesco_20201003_enciclica_fratelli-tutti.html" target="_blank" rel="noopener"><em>Fratelli Tutti</em> (2020)</a><a href="https://www.vatican.va/content/francesco/fr/apost_exhortations/documents/papa-francesco_esortazione-ap_20131124_evangelii-gaudium.html" target="_blank" rel="noopener"><em>Evangelii Gaudium</em> (2013)</a></div>
+      <div><h4>Contact</h4><a href="mailto:jerome.montois@lille.catholique.fr">jerome.montois@lille.catholique.fr</a></div>
+    </div>
+    <p style="text-align:center;padding:0 32px 16px;font-size:13px;color:rgba(255,255,255,0.4);"><a href="https://sdilille.github.io/mentions.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Mentions legales</a></p>
+    <div class="footer-bottom" style="padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">&copy; 2026 Diocese de Lille — Service pour le Dialogue Interreligieux. Tous droits reserves.</div>
+  </footer>
+
+  <script>window.DIALOGOS_QUIZ = {module5: [
+    {question: "<em>Salam</em> et <em>shalom</em> partagent-ils la meme racine semitique ?", options: ["Oui, la racine S-L-M.","Non, ce sont des racines differentes.","Seulement en arabe et hebreu moderne."], correct: 0, feedback: "Exact. Salam et shalom partagent la meme racine semitique S-L-M, signifiant paix, salut, integrite."},
+    {question: "Quel document a ete signe a Abu Dhabi en 2019 ?", options: ["Nostra Aetate","Le Document sur la Fraternite Humaine","Redemptoris Missio","Fratelli Tutti"], correct: 1, feedback: "Exact. Le Document sur la Fraternite Humaine a ete signe le 4 fevrier 2019 par le pape Francois et le Grand Imam d'Al-Azhar Ahmad al-Tayyeb."},
+    {question: "<em>Fratelli Tutti</em> &sect;261 affirme-t-il que la guerre resout les conflits ?", options: ["Oui, dans certains cas.","Non, 'les guerres ne se resolvent jamais'.","Le texte ne parle pas de guerre."], correct: 1, feedback: "Exact. FT &sect;261 affirme : 'Chaque guerre laisse le monde plus pire qu'il n'etait. Les guerres ne se resolvent jamais.' (AAS 112)."},
+    {question: "Le dialogue interreligieux est-il une condition necessaire de la paix ?", options: ["Oui, selon Evangelii Gaudium &sect;250.","Non, c'est une option pastorale.","Seulement dans certaines regions."], correct: 0, feedback: "Exact. Evangelii Gaudium &sect;250 affirme que 'le dialogue interreligieux est une condition necessaire de la paix dans le monde.'"},
+    {question: "Le parcours DIALOGOS comporte-t-il 5 modules ?", options: ["Oui.","Non, il n'en comporte que 3.","Non, il en comporte 4."], correct: 0, feedback: "Exact. Le parcours DIALOGOS comporte 5 modules : Fondements, 4 Formes, Marie, Jeune, Paix."},
+    {question: "Le Document d'Abu Dhabi affirme-t-il que la diversite religieuse est voulue par Dieu ?", options: ["Oui, explicitement.","Non, il ne traite pas de cette question.","Il affirme l'inverse."], correct: 0, feedback: "Exact. Le Document d'Abu Dhabi affirme explicitement que 'la pluralite et la difference de religions... sont voulues par Dieu dans sa sagesse.'"},
+    {question: "<em>Shalom</em> biblique signifie-t-il seulement l'absence de guerre ?", options: ["Oui, c'est la definition exacte.","Non, c'est la plenitude du bien-etre (integrite, justice, concorde).","Cela depend du contexte biblique."], correct: 1, feedback: "Exact. Le <em>shalom</em> biblique designe la plenitude du bien-etre : integrite, justice, concorde, prosperite partagee. Ce n'est pas seulement l'absence de guerre."},
+    {question: "<em>Salam</em> en Islam est-il un attribut de Dieu ?", options: ["Oui, <em>al-Salam</em> (le Pacifique) est un attribut divin.","Non, c'est seulement une salutation humaine.","C'est un concept ethique sans dimension theologique."], correct: 0, feedback: "Exact. <em>Al-Salam</em> (le Pacifique) est l'un des 99 noms d'Allah. C'est a la fois un attribut de Dieu, une salutation rituelle et un etat spirituel."},
+    {question: "L'ethique de la non-violence dans <em>Fratelli Tutti</em> s'applique-t-elle aussi aux relations interreligieuses ?", options: ["Oui, c'est un style de vie pour tous les rapports humains.","Non, elle ne concerne que la politique internationale.","Elle s'applique seulement aux relations entre Etats."], correct: 0, feedback: "Exact. L'ethique de la non-violence dans FT &sect;258-262 est un style de vie qui s'applique a tous les rapports humains, y compris les relations interreligieuses."},
+    {question: "Le <em>jihad</em> dans la tradition islamique designe-t-il uniquement la guerre sainte ?", options: ["Oui, c'est le sens principal du terme.","Non, c'est d'abord le combat interieur pour la rectitude spirituelle.","Les deux sens sont equivalents."], correct: 1, feedback: "Exact. Le <em>jihad</em> designe avant tout le 'combat interieur' pour la rectitude spirituelle. Dans son acceptation sociale, c'est le combat pour etablir la justice, non la 'guerre sainte' comme souvent mal compris."}
+  ]};</script>
+  <script src="js/quiz.js"></script><script src="js/main.js"></script><script src="js/progression.js"></script>
+</body>
+</html>
